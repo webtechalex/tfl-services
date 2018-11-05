@@ -40,7 +40,7 @@ export const fetchServices = () => dispatch => {
   let servicesURL = 'https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr/Status?detail=true'
   get(servicesURL)
     .then(response => {
-      dispatch(fetchServicesSuccess(response))
+      dispatch(fetchServicesSuccess(response.data))
     })
     .catch(error => {
       dispatch(fetchServicesError())
@@ -52,7 +52,7 @@ export const fetchBikes = (query) => dispatch => {
   let servicesURL = `https://api.tfl.gov.uk/BikePoint/Search?query=${query}`
   get(servicesURL)
     .then(response => {
-      dispatch(fetchBikesSuccess(response))
+      dispatch(fetchBikesSuccess(response.data))
     })
     .catch(error => {
       dispatch(fetchBikesError())
