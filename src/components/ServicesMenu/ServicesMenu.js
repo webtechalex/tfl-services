@@ -1,15 +1,15 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import WarningIcon from "@material-ui/icons/Warning";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import React from "react"
+import Button from "@material-ui/core/Button"
+import Menu from "@material-ui/core/Menu"
+import MenuItem from "@material-ui/core/MenuItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import WarningIcon from "@material-ui/icons/Warning"
+import CheckCircleIcon from "@material-ui/icons/CheckCircle"
 
 class ServicesMenu extends React.Component {
   render() {
-    const { menuAnchor } = this.props;
+    const { menuAnchor } = this.props
 
     return (
       <div>
@@ -35,20 +35,16 @@ class ServicesMenu extends React.Component {
               <ListItemText primary={line.name} inset />
               <ListItemText primary={line.isNight ? 'N' : ''} inset />
               <ListItemIcon>
-                {line.hasDisruptions
+                {!line.hasDisruptions
                   ? <CheckCircleIcon />
                   : <WarningIcon />}
               </ListItemIcon>
             </MenuItem>
           ))}
-          <MenuItem>
-            <ListItemText primary='Cycle Hire' inset />
-          </MenuItem>
         </Menu>
       </div>
-    );
+    )
   }
 }
 
-// export default withStyles(styles)(SimpleMenu);
 export default ServicesMenu;
