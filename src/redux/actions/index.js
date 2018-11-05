@@ -4,14 +4,12 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
 
 export const fetchServicesLoading = (isLoading) => ({
   type: FETCH_DATA_LOADING,
-  name: 'services',
-  payload: isLoading
+  name: 'services'
 })
 
 export const fetchServicesError = (hasError) => ({
   type: FETCH_DATA_ERROR,
-  name: 'services',
-  payload: hasError
+  name: 'services'
 })
 
 export const fetchServicesSuccess = (payload) => ({
@@ -22,14 +20,12 @@ export const fetchServicesSuccess = (payload) => ({
 
 export const fetchBikesLoading = (isLoading) => ({
   type: FETCH_DATA_LOADING,
-  name: 'bikes',
-  payload: isLoading
+  name: 'bikes'
 })
 
 export const fetchBikesError = (hasError) => ({
   type: FETCH_DATA_ERROR,
-  name: 'bikes',
-  payload: hasError
+  name: 'bikes'
 })
 
 export const fetchBikesSuccess = (payload) => ({

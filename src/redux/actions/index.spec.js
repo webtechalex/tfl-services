@@ -6,8 +6,7 @@ describe('services actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_LOADING,
-        name: 'services',
-        payload: true
+        name: 'services'
       }
       expect(fetchServicesLoading(true)).toEqual(expected)
     })
@@ -17,8 +16,7 @@ describe('services actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_ERROR,
-        name: 'services',
-        payload: true
+        name: 'services'
       }
       expect(fetchServicesError(true)).toEqual(expected)
     })
@@ -42,8 +40,7 @@ describe('bikes actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_LOADING,
-        name: 'bikes',
-        payload: true
+        name: 'bikes'
       }
       expect(fetchBikesLoading(true)).toEqual(expected)
     })
@@ -53,8 +50,7 @@ describe('bikes actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_ERROR,
-        name: 'bikes',
-        payload: true
+        name: 'bikes'
       }
       expect(fetchBikesError(true)).toEqual(expected)
     })
