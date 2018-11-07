@@ -34,20 +34,18 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="app-header">
-          <h1>TfL Services</h1>
-          <div>
-            <ServicesMenu
-              services={this.props.services}
-              menuAnchor={this.state.menuAnchor}
-              handleButtonClick={this.handleButtonClick}
-              handleMenuClick={this.handleMenuClick}
-              handleClose={this.handleClose}
-            />
-          </div>
-          <ServiceStatusContainer lineName={this.state.selected}/>
-          <BikePointsContainer isVisible={this.state.selected === 'cycle'}/>
-        </header>
+        <h1>TfL Services</h1>
+        <div>
+          <ServicesMenu
+            services={this.props.services}
+            menuAnchor={this.state.menuAnchor}
+            handleButtonClick={this.handleButtonClick}
+            handleMenuClick={this.handleMenuClick}
+            handleClose={this.handleClose}
+          />
+        </div>
+        <ServiceStatusContainer lineName={this.state.selected}/>
+        <BikePointsContainer isVisible={this.state.selected === 'cycle'}/>
       </div>
     )
   }

@@ -5,7 +5,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 const BikePointsList = ({bikePoints}) => {
   if (bikePoints.length) {
-    console.log ('Bikes', bikePoints)
     return (
       <List>
         {bikePoints.map(item => (
