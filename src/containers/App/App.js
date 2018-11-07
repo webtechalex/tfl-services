@@ -37,13 +37,15 @@ class App extends Component {
       <div className="app">
         <header className="app-header">
           <Typography variant='h2'>TfL Services</Typography>
-          <ServicesMenu
-            services={this.props.services}
-            menuAnchor={this.state.menuAnchor}
-            handleButtonClick={this.handleButtonClick}
-            handleMenuClick={this.handleMenuClick}
-            handleClose={this.handleClose}
-          />
+          <div>
+            <ServicesMenu
+              services={this.props.services}
+              menuAnchor={this.state.menuAnchor}
+              handleButtonClick={this.handleButtonClick}
+              handleMenuClick={this.handleMenuClick}
+              handleClose={this.handleClose}
+            />
+          </div>
           <ServiceStatusContainer lineName={this.state.selected}/>
           <BikePointsContainer isVisible={this.state.selected === 'cycle'}/>
         </header>
