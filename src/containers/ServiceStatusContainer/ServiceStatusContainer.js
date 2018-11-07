@@ -5,7 +5,7 @@ import Disruptions from '../../components/Disruptions/Disruptions'
 import getDisruptions from '../../redux/selectors/getDisruptions'
 
 const ServiceStatusContainer = ({disruptions, lineName}) => {
-  if (!lineName) return null
+  if (!lineName || lineName === 'cycle') return null
   if (disruptions.length) {
     return (
       <Fragment>

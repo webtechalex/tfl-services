@@ -53,6 +53,7 @@ export const fetchServices = () => dispatch => {
 }
 
 export const fetchBikes = (query) => dispatch => {
+  console.log('fetching bikes...')
   dispatch(fetchBikesLoading())
   let servicesURL = `https://api.tfl.gov.uk/BikePoint/Search?query=${query}`
   get(servicesURL)

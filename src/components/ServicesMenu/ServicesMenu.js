@@ -1,4 +1,4 @@
-import React from "react"
+import React, {Fragment} from "react"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
@@ -8,7 +8,7 @@ import WarningIcon from "@material-ui/icons/Warning"
 import CheckCircleIcon from "@material-ui/icons/CheckCircle"
 
 const ServicesMenu = ({menuAnchor, services, handleButtonClick, handleMenuClick, handleClose}) => (
-  <div>
+  <Fragment>
     <Button
       aria-owns={menuAnchor ? "simple-menu" : undefined}
       aria-haspopup="true"
@@ -37,8 +37,14 @@ const ServicesMenu = ({menuAnchor, services, handleButtonClick, handleMenuClick,
           </ListItemIcon>
         </MenuItem>
       ))}
+      <MenuItem
+        key='cycle'
+        onClick={() => handleMenuClick('cycle')}
+      >
+        <ListItemText primary='Cycle Hire' inset />
+      </MenuItem>
     </Menu>
-  </div>
+  </Fragment>
 )
 
 export default ServicesMenu
