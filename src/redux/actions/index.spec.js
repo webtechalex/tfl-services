@@ -6,7 +6,8 @@ describe('services actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_LOADING,
-        name: 'services'
+        name: 'services',
+        status: 'loading'
       }
       expect(fetchServicesLoading(true)).toEqual(expected)
     })
@@ -16,7 +17,8 @@ describe('services actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_ERROR,
-        name: 'services'
+        name: 'services',
+        status: 'error'
       }
       expect(fetchServicesError(true)).toEqual(expected)
     })
@@ -28,6 +30,7 @@ describe('services actions', () => {
       const expected = {
         type: FETCH_DATA_SUCCESS,
         name: 'services',
+        status: 'success',
         payload: mockPayload
       }
       expect(fetchServicesSuccess(['dummy', 'payload'])).toEqual(expected)
@@ -40,7 +43,8 @@ describe('bikes actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_LOADING,
-        name: 'bikes'
+        name: 'bikes',
+        status: 'loading'
       }
       expect(fetchBikesLoading(true)).toEqual(expected)
     })
@@ -50,7 +54,8 @@ describe('bikes actions', () => {
     it('returns an object with the expected shape', () => {
       const expected = {
         type: FETCH_DATA_ERROR,
-        name: 'bikes'
+        name: 'bikes',
+        status: 'error'
       }
       expect(fetchBikesError(true)).toEqual(expected)
     })
@@ -62,6 +67,7 @@ describe('bikes actions', () => {
       const expected = {
         type: FETCH_DATA_SUCCESS,
         name: 'bikes',
+        status: 'success',
         payload: mockPayload
       }
       expect(fetchBikesSuccess(['dummy', 'payload'])).toEqual(expected)

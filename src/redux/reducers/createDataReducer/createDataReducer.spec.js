@@ -13,21 +13,25 @@ describe('createDataReducer', () => {
 
     describe('given no arguments', () => {
       it('returns a default state', () => {
-        expect(reducer()).toEqual(null)
+        expect(reducer()).toEqual({"data": [], "hasError": false, "isLoading": false})
       })
     })
 
     describe('given an action with an incompatible name', () => {
       it('returns the current state', () => {
-        const mockState = ['dummy', 'state']
-        expect(reducer(mockState, { type: FETCH_DATA_SUCCESS, name: 'bikes', payload: ['dummy', 'payload'] })).toBe(mockState)
+        const mockState = {"data": [], "hasError": false, "isLoading": true}
+        const action = { type: FETCH_DATA_SUCCESS, name: 'bikes', status: 'success', payload: ['dummy', 'payload'] }
+        expect(reducer(mockState, action)).toBe(mockState)
       })
     })
 
     describe('given an action with a compatible name', () => {
       it('returns the action payload as the new state', () => {
-        const mockPayload = ['dummy', 'payload']
-        expect(reducer(null, { type: FETCH_DATA_SUCCESS, name: 'services', payload: mockPayload } )).toBe(mockPayload)
+        const mockState = {"data": [], "hasError": false, "isLoading": true}
+        const payload = ['dummy', 'payload']
+        const expected = {"data": payload, "hasError": false, "isLoading": false}
+        const action = { type: FETCH_DATA_SUCCESS, name: 'services', status: 'success', payload }
+        expect(reducer(mockState, action)).toEqual(expected)
       })
     })
   })

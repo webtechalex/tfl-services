@@ -37,6 +37,7 @@ export const fetchBikesError = () => ({
 export const fetchBikesSuccess = (payload) => ({
   type: FETCH_DATA_SUCCESS,
   name: 'bikes',
+  status: 'success',
   payload
 })
 
