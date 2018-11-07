@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
 import { connect } from 'react-redux'
-import Typography from '@material-ui/core/Typography'
 import Disruptions from '../../components/Disruptions/Disruptions'
 import getDisruptions from '../../redux/selectors/getDisruptions'
 
@@ -9,13 +8,13 @@ const ServiceStatusContainer = ({disruptions, lineName}) => {
   if (disruptions.length) {
     return (
       <Fragment>
-        <Typography variant='h2'>Service currently suffering disruptions</Typography>
+        <h2>Service currently suffering disruptions</h2>
         <Disruptions disruptions={disruptions} />
       </Fragment>
     )
   }
   return (
-    <Typography variant='h2'>No service disruptions</Typography>
+    <h2>No service disruptions</h2>
   )
 }
 

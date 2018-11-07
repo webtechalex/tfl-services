@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Typography from '@material-ui/core/Typography'
 import ServiceStatusContainer from '../ServiceStatusContainer/ServiceStatusContainer'
 import BikePointsContainer from '../BikePointsContainer/BikePointsContainer'
 
@@ -36,7 +35,7 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <Typography variant='h2'>TfL Services</Typography>
+          <h1>TfL Services</h1>
           <div>
             <ServicesMenu
               services={this.props.services}
