@@ -5,28 +5,33 @@ export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
 
 export const fetchServicesLoading = () => ({
   type: FETCH_DATA_LOADING,
-  name: 'services'
+  name: 'services',
+  status: 'loading'
 })
 
 export const fetchServicesError = () => ({
   type: FETCH_DATA_ERROR,
-  name: 'services'
+  name: 'services',
+  status: 'error'
 })
 
 export const fetchServicesSuccess = (payload) => ({
   type: FETCH_DATA_SUCCESS,
   name: 'services',
+  status: 'success',
   payload
 })
 
 export const fetchBikesLoading = () => ({
   type: FETCH_DATA_LOADING,
-  name: 'bikes'
+  name: 'bikes',
+  status: 'loading'
 })
 
 export const fetchBikesError = () => ({
   type: FETCH_DATA_ERROR,
-  name: 'bikes'
+  name: 'bikes',
+  status: 'error'
 })
 
 export const fetchBikesSuccess = (payload) => ({

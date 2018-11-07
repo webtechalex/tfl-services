@@ -2,25 +2,25 @@ import React, { Fragment } from "react"
 import { connect } from 'react-redux'
 import Typography from '@material-ui/core/Typography'
 import Disruptions from '../../components/Disruptions/Disruptions'
+import getDisruptions from '../../redux/selectors/getDisruptions'
 
 const ServiceStatusContainer = ({disruptions, lineName}) => {
-  if (lineName) {
-    if (disruptions.length) {
-      return (
-        <Fragment>
-          <Typography variant='h2'>Service currently suffering disruptions</Typography>
-          <Disruptions disruptions={disruptions} />
-        </Fragment>
-      )
-    }
+  if (!lineName) return null
+  if (disruptions.length) {
     return (
-      <Typography variant='h2'>No service disruptions</Typography>
+      <Fragment>
+        <Typography variant='h2'>Service currently suffering disruptions</Typography>
+        <Disruptions disruptions={disruptions} />
+      </Fragment>
     )
   }
-  return null
+  return (
+    <Typography variant='h2'>No service disruptions</Typography>
+  )
 }
 
-const mapStateToProps = (state, ownProps) =>
-  ({disruptions: state.length ? state.find(line => line.name === ownProps.lineName).lineStatuses.filter(status => status.statusSeverity < 10) : []})
+const mapStateToProps = (state, ownProps) => {
+  return {disruptions: getDisruptions(state.services.data, ownProps.lineName)}
+}
 
 export default connect(mapStateToProps)(ServiceStatusContainer)

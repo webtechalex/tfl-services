@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Typography from '@material-ui/core/Typography'
 import ServiceStatusContainer from '../ServiceStatusContainer/ServiceStatusContainer'
+import BikePointsContainer from '../BikePointsContainer/BikePointsContainer'
 
 import { fetchServices } from '../../redux/actions'
 import getServiceStatus from '../../redux/selectors/getServiceStatus'
@@ -44,6 +45,7 @@ class App extends Component {
             handleClose={this.handleClose}
           />
           <ServiceStatusContainer lineName={this.state.selected}/>
+          <BikePointsContainer isVisible={this.state.selected === 'cycle'}/>
         </header>
       </div>
     )
@@ -51,7 +53,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  services: getServiceStatus(state.services)
+  services: getServiceStatus(state.services.data)
 })
 
 export default connect(mapStateToProps, { fetchServices })(App)

@@ -5,9 +5,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 const Disruptions = ({disruptions}) => (
   <List>
-    {disruptions.map(item => (
-      <ListItem>
-        <ListItemText primary={item} />
+    {disruptions.map((item, index) => (
+      <ListItem key={index}>
+        <ListItemText primary={item.reason} />
       </ListItem>
     ))}
   </List>

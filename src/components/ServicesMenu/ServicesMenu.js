@@ -41,6 +41,4 @@ const ServicesMenu = ({menuAnchor, services, handleButtonClick, handleMenuClick,
   </div>
 )
 
-
-
-export default ServicesMenu;
+export default ServicesMenu
